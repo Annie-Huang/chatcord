@@ -10,3 +10,5 @@ C:\react\chatcord>npm install express socket.io moment
 C:\react\chatcord>npm install -D nodemon
 
 
+C:\react\chatcord>npm run dev
+

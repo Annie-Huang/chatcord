@@ -15,3 +15,9 @@ C:\react\chatcord>npm run dev
 http://localhost:3000/
     << You can enter any user name and click join
     << Open multiple http://localhost:3000/, each of them is a separate user.
+
+
+You can use
+https://www.npmjs.com/package/handlebars
+https://www.npmjs.com/package/mustache
+to display things into template (html file)

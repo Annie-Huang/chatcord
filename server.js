@@ -19,20 +19,18 @@ io.on('connection', socket => {
     // console.log('New WS Connection...');
 
     socket.on('joinRoom', ({username, room}) => {
+        // Only emit to the single client that is connecting
+        // Welcome current User
+        socket.emit('message', formatMessage(botName,'Welcome to ChatCord!'));
 
+        // Broadcast to all the users except for the user that is connecting
+        // Broadcast when a user connects
+        socket.broadcast.emit('message', formatMessage(botName,'A user has joined the chat'));
+
+        // Broadcast to everyone.
+        // io.emit();
     });
 
-    // Only emit to the single client that is connecting
-    // Welcome current User
-    socket.emit('message', formatMessage(botName,'Welcome to ChatCord!'));
-
-    // Broadcast to all the users except for the user that is connecting
-    // Broadcast when a user connects
-    socket.broadcast.emit('message', formatMessage(botName,'A user has joined the chat'));
-
-    // Broadcast to everyone.
-    // io.emit();
-    
     // Listen for chatMessage
     socket.on('chatMessage', msg => {
         // console.log(msg); // the logging is in the terminal

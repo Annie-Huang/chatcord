@@ -7,5 +7,6 @@ https://github.com/Annie-Huang/chatcord
 
 C:\react\chatcord>npm init -y
 C:\react\chatcord>npm install express socket.io moment
+C:\react\chatcord>npm install -D nodemon
 
 

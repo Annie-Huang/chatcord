@@ -1,5 +1,8 @@
 const chatForm = document.getElementById('chat-form');
 const chatMesssages = document.querySelector('.chat-messages');
+const roomName = document.getElementById('room-name');
+const userList = document.getElementById('users');
+
 
 // Get username and room from URL
 // the ignoreQueryPrefix to prevent letters like ?, & into the variable from this:
@@ -71,3 +74,14 @@ function outputMessage(message) {
     chatMesssages.appendChild(div);
 }
 
+// Add room name to DOM
+function outputRoomName(room) {
+    roomName.innerText = room;
+}
+
+// Add users to DOM
+function outputUsers(users) {
+    userList.innerHTML = `
+        ${users.map(user => `<li>${user.username}</li>`).join('')}
+    `;
+}

@@ -25,7 +25,7 @@ function userLeave(id) {
 
 // Get room users
 function getRoomUsers(room) {
-    return uesrs.filter(user => user.room === room);
+    return users.filter(user => user.room === room);
 }
 
 module.exports = {

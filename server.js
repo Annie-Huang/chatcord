@@ -51,7 +51,7 @@ io.on('connection', socket => {
 
     // Listen for chatMessage
     socket.on('chatMessage', msg => {
-        const user = userLeave(socket.id);
+        const user = getCurrentUser(socket.id);
 
         // console.log(msg); // the logging is in the terminal
         // io.emit('message', formatMessage('USER', msg))
@@ -60,7 +60,7 @@ io.on('connection', socket => {
 
     // Runs when client disconnects
     socket.on('disconnect', () => {
-        const user = getCurrentUser(socket.id);
+        const user = userLeave(socket.id);
 
         if (user) {
             // io.emit('message', formatMessage(botName,'A user has left the chat'));

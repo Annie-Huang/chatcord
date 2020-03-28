@@ -7,12 +7,18 @@ const chatMesssages = document.querySelector('.chat-messages');
 const {username, room} = Qs.parse(location.search, {
     ignoreQueryPrefix: true
 });
-console.log(username, room);
+// console.log(username, room);
 
 const socket = io();
 
 // Join chatroom
 socket.emit('joinRoom', {username, room});
+
+// Get room and users
+socket.on('roomUsers', ({room, users}) => {
+    outputRoomName(room);
+    outputUsers(users);
+});
 
 
 // Message from server

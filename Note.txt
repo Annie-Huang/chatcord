@@ -12,3 +12,4 @@ C:\react\chatcord>npm install -D nodemon
 
 C:\react\chatcord>npm run dev
 
+http://localhost:3000/

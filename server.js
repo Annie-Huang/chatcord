@@ -3,7 +3,7 @@ const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
 const formatMessage = require('./utils/message.js'); // Remember to use related path otherwise compile error.
-
+const {userJoin, getCurrentUser} = require('./utils/users');
 
 const app = express();
 const server = http.createServer(app);
@@ -19,13 +19,25 @@ io.on('connection', socket => {
     // console.log('New WS Connection...');
 
     socket.on('joinRoom', ({username, room}) => {
+        // socket.id is a unique identifier for the session, e.g. each localhost:3000 window
+        // console.log('socket.id=', socket.id);
+        const user = userJoin(socket.id, username, room);
+
+        socket.join(user.room);
+
         // Only emit to the single client that is connecting
         // Welcome current User
         socket.emit('message', formatMessage(botName,'Welcome to ChatCord!'));
 
         // Broadcast to all the users except for the user that is connecting
         // Broadcast when a user connects
-        socket.broadcast.emit('message', formatMessage(botName,'A user has joined the chat'));
+        // socket.broadcast.emit('message', formatMessage(botName,'A user has joined the chat'));
+        socket.broadcast
+            .to(user.room)
+            .emit(
+                'message',
+                formatMessage(botName,`${user.username} has joined the chat`)
+            );
 
         // Broadcast to everyone.
         // io.emit();

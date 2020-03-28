@@ -1,9 +1,16 @@
 https://www.youtube.com/watch?v=jD7FnbI76Hg   Realtime Chat With Users & Rooms - Socket.io, Node & Express
-
 https://github.com/bradtraversy/chatcord
 https://github.com/Annie-Huang/chatcord
 
 https://cdnjs.com/libraries/qs
+
+https://socket.io/docs/server-api/#socket-id
+https://socket.io/docs/server-api/#socket-join-room-callback
+https://socket.io/docs/server-api/#socket-to-room
+https://socket.io/docs/server-api/#Flag-%E2%80%98broadcast%E2%80%99
+https://socket.io/docs/server-api/#socket-on-eventName-callback
+https://socket.io/docs/server-api/#socket-emit-eventName-%E2%80%A6args-ack
+
 
 =======================================================
 

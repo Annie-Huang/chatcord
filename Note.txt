@@ -3,6 +3,8 @@ https://www.youtube.com/watch?v=jD7FnbI76Hg   Realtime Chat With Users & Rooms -
 https://github.com/bradtraversy/chatcord
 https://github.com/Annie-Huang/chatcord
 
+https://cdnjs.com/libraries/qs
+
 =======================================================
 
 C:\react\chatcord>npm init -y
@@ -21,3 +23,7 @@ You can use
 https://www.npmjs.com/package/handlebars
 https://www.npmjs.com/package/mustache
 to display things into template (html file)
+
+When user login, this will be in the url:
+http://localhost:3000/chat.html?username=Brad&room=JavaScript
+

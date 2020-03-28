@@ -12,4 +12,4 @@ C:\react\chatcord>npm install -D nodemon
 
 C:\react\chatcord>npm run dev
 
-http://localhost:3000/
+http://localhost:3000/      << You can enter any user name and click join

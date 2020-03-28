@@ -14,7 +14,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 io.on('connection', socket => {
     console.log('New WS Connection...');
 
+    // Only emit to the single client that is connecting
     socket.emit('message', 'Welcome to ChatCord!');
+
+    // Broadcast when a user connects
+    // Broadcast to all the users except for the user that is connecting
+    socket.broadcast.emit('message', 'A user has joined the chat')
+
+    // Broadcast to everyone.
+    // io.emit();
 });
 
 const PORT = 3000 || process.env.POST;

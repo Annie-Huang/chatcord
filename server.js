@@ -32,7 +32,8 @@ io.on('connection', socket => {
 
     // Listen for chatMessage
     socket.on('chatMessage', msg => {
-        console.log(msg); // the logging is in the terminal
+        // console.log(msg); // the logging is in the terminal
+        io.emit('message', msg)
     })
 });
 

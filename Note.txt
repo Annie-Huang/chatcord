@@ -5,4 +5,7 @@ https://github.com/Annie-Huang/chatcord
 
 =======================================================
 
+C:\react\chatcord>npm init -y
+
+
 

@@ -1,0 +1,20 @@
+{
+  "name": "chatcord",
+  "version": "1.0.0",
+  "description": "Realtime chat app with",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Annie-Huang/chatcord.git"
+  },
+  "keywords": [],
+  "author": "Annie Huang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Annie-Huang/chatcord/issues"
+  },
+  "homepage": "https://github.com/Annie-Huang/chatcord#readme"
+}

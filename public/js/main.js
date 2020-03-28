@@ -1,7 +1,19 @@
 const chatForm = document.getElementById('chat-form');
 const chatMesssages = document.querySelector('.chat-messages');
 
+// Get username and room from URL
+// the ignoreQueryPrefix to prevent letters like ?, & into the variable from this:
+// http://localhost:3000/chat.html?username=Brad&room=JavaScript
+const {username, room} = Qs.parse(location.search, {
+    ignoreQueryPrefix: true
+});
+console.log(username, room);
+
 const socket = io();
+
+// Join chatroom
+socket.emit('joinRoom', {username, room});
+
 
 // Message from server
 socket.on('message', message => {
@@ -51,6 +63,5 @@ function outputMessage(message) {
         </p>    
     `;
     chatMesssages.appendChild(div);
-
 }
 

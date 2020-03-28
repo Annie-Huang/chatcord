@@ -18,6 +18,10 @@ const botName = 'ChatCord Bot';
 io.on('connection', socket => {
     // console.log('New WS Connection...');
 
+    socket.on('joinRoom', ({username, room}) => {
+
+    });
+
     // Only emit to the single client that is connecting
     // Welcome current User
     socket.emit('message', formatMessage(botName,'Welcome to ChatCord!'));
@@ -28,17 +32,17 @@ io.on('connection', socket => {
 
     // Broadcast to everyone.
     // io.emit();
+    
+    // Listen for chatMessage
+    socket.on('chatMessage', msg => {
+        // console.log(msg); // the logging is in the terminal
+        io.emit('message', formatMessage('USER', msg))
+    });
 
     // Runs when client disconnects
     socket.on('disconnect', () => {
         io.emit('message', formatMessage(botName,'A user has left the chat'));
     });
-
-    // Listen for chatMessage
-    socket.on('chatMessage', msg => {
-        // console.log(msg); // the logging is in the terminal
-        io.emit('message', formatMessage('USER', msg))
-    })
 });
 
 const PORT = 3000 || process.env.POST;
